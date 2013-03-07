@@ -7,7 +7,10 @@ The Management Certificate is required for secure communication with the Windows
 Follow these steps to generate the certificate
 
 1. Download the settings file from http://go.microsoft.com/fwlink/?LinkId=254432
-2. Extract the data from the ManagementCertificate field into a separate file named - cert.pfx
+2. Extract the data from the ManagementCertificate field into a separate file named cert.pfx. If you have xmlstarlet, this command will work:
+
+ xmlstarlet sel -t -m "//PublishData/PublishProfile[@PublishMethod='AzureServiceManagementAPI']" -v @ManagementCertificate credentials.publishsettings
+
 3. Decode the certificate file :
 
 ==== On Linux/Mac(Homebrew)
