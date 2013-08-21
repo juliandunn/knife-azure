@@ -293,7 +293,8 @@ class Chef
            }
 
           end
-          sleep 15
+          print "\nWaiting 300 seconds for Azure to finish provisioning machine..."
+          sleep 300
           bootstrap_for_windows_node(server,fqdn, port).run
         else
           unless server && server.publicipaddress && server.sshport
